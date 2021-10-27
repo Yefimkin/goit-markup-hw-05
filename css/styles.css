@@ -140,6 +140,11 @@ body {
   color: var(--second-text-color);
 }
 
+/* .menu-link {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+} */
+
 .menu-link:hover,
 .menu-link:focus {
   color: var(--accent-color);
@@ -357,6 +362,11 @@ body {
 }
 .social-item:last-child {
   margin-right: 0;
+}
+
+.social-link {
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
