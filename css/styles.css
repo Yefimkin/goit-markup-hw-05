@@ -248,6 +248,9 @@ body {
   width: 200px;
   height: 50px;
   border: 1px, var(--accent-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 .btn:hover {
@@ -326,9 +329,26 @@ body {
 
 .works-title-section {
   background-color: rgba(47, 48, 58, 0.8);
+  position: relative;
 }
 
 .works-title-text {
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  background: rgba(47, 48, 58, 0.8);
+  color: #ffffff;
+  bottom: 0;
+  left: 0;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* ---------------- section 4 ---------------- */
@@ -405,15 +425,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
 .social-link:focus {
   background-color: var(--accent-color);
-  border-radius: 50%;
 }
 
 .social-link:hover .social-icon,
@@ -423,9 +442,8 @@ body {
 
 .social-icon {
   fill: #afb1b8;
-  transition-property: fill;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #afb1b8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ---------------- section 5 ---------------- */
@@ -596,9 +614,9 @@ body {
   padding-right: 22px;
   padding-top: 6px;
   padding-bottom: 6px;
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -692,4 +710,49 @@ body {
 
 .box:hover .overlay {
   transform: translateY(0);
+}
+
+/* ---------------- modal-window ---------------- */
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal {
+  position: absolute;
+  width: 528px;
+  height: 581px;
+  background-color: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-btn {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdrop.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
